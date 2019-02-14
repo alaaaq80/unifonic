@@ -1,0 +1,30 @@
+{
+    "name": "alaaaq80/yii2-unifonic",
+    "type": "yii2-extension",
+    "description": "The Unifonic integration for the Yii framework",
+    "keywords": ["yii2", "Unifonic", "SMS", "Mobile verification"],
+    "license": "BSD-3-Clause",
+    "homepage": "https://github.com/alaaaq80/unifonic",
+    "support": {
+        "issues": "https://github.com/alaaaq80/unifonic/issues",
+        "wiki": "https://github.com/alaaaq80/unifonic/wiki",
+        "source": "https://github.com/alaaaq80/unifonic"
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": ">=2.0.5"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable":true,
+    "authors": [
+        {
+            "name": "Alaa Mahmoud",
+            "email": "alaa.aqr@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "alaaaq80\\unifonic\\": "src"
+        }
+    }
+}
