@@ -34,6 +34,11 @@ Class Message{
                 'Body'      =>  'required',
                 'SenderID'  =>  'max_len,16',
             ),
+            'isValidPhoneNumber' => array(
+                'Recipient' =>  'numeric|required|min_len,12|max_len,14',
+                'Body'      =>  'required',
+                'SenderID'  =>  'max_len,16',
+            ),
             'SendBulkMessages' => array(
                 'Recipient' =>  'required',
                 'Body'      =>  'required',
@@ -94,6 +99,39 @@ Class Message{
             }
 
 
+        }catch (Exception $e)
+        {
+            throw $e;
+        }
+    }
+
+    /**
+     * @param $Recipient
+     * @param $Body
+     * @param $SenderID
+     * @return mixed
+     * @throws \Exception
+     * @throws \alaaaq80\unifonic\src\API\Exception
+     */
+
+    public function isValidPhoneNumber($Recipient,$Body,$SenderID = null)
+    {
+        try{
+
+            $aParams = array(
+                'Recipient' => $Recipient,
+                'Body'      => $Body,
+                'SenderID'  => $SenderID
+            );
+
+            $valid = GUMP::is_valid($aParams ,$this->Rules(__FUNCTION__));
+
+            if($valid !== true)
+            {
+                return $valid[0];
+            } else {
+                return true;
+            }
         }catch (Exception $e)
         {
             throw $e;
