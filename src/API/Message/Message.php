@@ -30,12 +30,12 @@ Class Message{
 
         $rules = array(
             'Send' => array(
-                'Recipient' =>  'numeric|required|min_len,12|max_len,14',
+                'Recipient' =>  'numeric|required|min_len,10|max_len,16',
                 'Body'      =>  'required',
                 'SenderID'  =>  'max_len,16',
             ),
             'isValidPhoneNumber' => array(
-                'Recipient' =>  'numeric|required|min_len,12|max_len,14',
+                'Recipient' =>  'numeric|required|min_len,10|max_len,16',
                 'Body'      =>  'required',
                 'SenderID'  =>  'max_len,16',
             ),
